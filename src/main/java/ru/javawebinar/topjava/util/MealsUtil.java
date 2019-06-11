@@ -26,6 +26,7 @@ public class MealsUtil {
         mealsWithExcess.forEach(System.out::println);
     }
 
+
     public static List<MealTo> getFilteredWithExcess(List<Meal> meals, LocalTime startTime, LocalTime endTime, int caloriesPerDay) {
         Map<LocalDate, Integer> caloriesSumByDate = meals.stream()
                 .collect(
