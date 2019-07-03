@@ -2,3 +2,9 @@
 exclude_paths:
   - 'src/main/webapp/**'
   - 'README.md'
+  - 'src/main/resources/db/initDB_hsql.sql'
+  - 'ReleaseNotes.md'
+  - 'cv.md'
+  - 'description.md'
+  - 'graduation.md'
+  - 'doc/lesson07.md'
