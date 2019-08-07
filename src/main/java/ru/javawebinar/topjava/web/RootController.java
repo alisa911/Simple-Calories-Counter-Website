@@ -5,11 +5,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.service.MealService;
 import ru.javawebinar.topjava.service.UserService;
 import ru.javawebinar.topjava.util.MealsUtil;
 
 import javax.servlet.http.HttpServletRequest;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
+
+import static ru.javawebinar.topjava.web.SecurityUtil.authUserId;
 
 @Controller
 public class RootController {
@@ -40,7 +48,7 @@ public class RootController {
     @GetMapping("/meals")
     public String getMeals(Model model) {
         model.addAttribute("meals",
-                MealsUtil.getWithExcess(mealService.getAll(SecurityUtil.authUserId()), SecurityUtil.authUserCaloriesPerDay()));
+                MealsUtil.getWithExcess(mealService.getAll(authUserId()), SecurityUtil.authUserCaloriesPerDay()));
         return "meals";
     }
 }
