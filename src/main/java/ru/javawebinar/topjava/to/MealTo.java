@@ -25,7 +25,6 @@ public class MealTo {
         this.excess = excess;
     }
 
-
     public Integer getId() {
         return id;
     }

@@ -36,10 +36,7 @@ $(function () {
                         "asc"
                     ]
                 ]
-            }),
-            updateTable: function () {
-                $.get("ajax/admin/users/", updateTableByData);
-            }
+            })
         }
     );
 });
