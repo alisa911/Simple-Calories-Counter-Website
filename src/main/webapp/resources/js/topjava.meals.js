@@ -104,8 +104,6 @@ $(function () {
 ],
     "createdRow": function ( row, data, index ) {
         $(row).attr("data-mealExcess", data.excess);
-        // вот это я уже скопировал из демо,
-        // у самого не получилось сделать именно 'data-mealExcess'
     },
     "order": [
         [
