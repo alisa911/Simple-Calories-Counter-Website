@@ -54,4 +54,8 @@ public class MealTestData {
     public static ResultMatcher contentJson(Iterable<MealTo> expected) {
         return result -> assertThat(readListFromJsonMvcResult(result, MealTo.class)).isEqualTo(expected);
     }
+
+    public static MealTo getUpdatedTo() {
+        return new MealTo(MEAL1_ID, MEAL1.getDateTime(), "Обновленный завтрак", 200, true);
+    }
 }
