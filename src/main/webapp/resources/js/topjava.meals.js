@@ -1,7 +1,7 @@
 function updateFilteredTable() {
     $.ajax({
         type: "GET",
-        url: "ajax/profile/meals/filter",
+        url: mealsAjaxUrl + "filter",
         data: $("#filter").serialize()
     }).done(updateTableByData);
 }
@@ -13,7 +13,7 @@ function clearFilter() {
 
 $(function () {
     makeEditable({
-        ajaxUrl: "ajax/profile/meals/",
+        ajaxUrl: mealsAjaxUrl,
         datatableApi: $("#datatable").DataTable({
             "paging": false,
             "info": true,
@@ -28,8 +28,9 @@ $(function () {
                     "data": "calories"
                 },
                 {
-                    "defaultContent": "Edit",
-                    "orderable": false
+                    "defaultContent": "",
+                    "orderable": false,
+                    "render": renderEditBtn
                 },
                 {
                     "defaultContent": "Delete",
