@@ -1,5 +1,4 @@
 const mealAjaxUrl = "ajax/profile/meals/";
-const mealAjaxUrl = "ajax/profile/meals/";
 
 function updateFilteredTable() {
     $.ajax({
